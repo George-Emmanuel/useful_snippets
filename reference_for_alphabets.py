@@ -1,4 +1,5 @@
 special symbols = [".", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "~", "`", "{", "}", "[", "]", "|", ":", ';', "<", ">", "?", "/", "."]
+# Remeber to add the escape character in the list if required
 alpha = []
 Alpha = []
 num = []
