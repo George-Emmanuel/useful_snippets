@@ -1,0 +1,19 @@
+from pytube import YouTube
+
+
+video_url = "https://www.youtube.com/watch?v=A204b5Q4p_U&list=LL&index=2&pp=gAQBiAQB"
+output_path = r"D:\ALL Downloaded Files\YT mp3"
+try:
+    yt = YouTube(video_url)
+    audio_stream = yt.streams.filter(only_audio=True).first()
+    audio_stream.download(output_path)
+
+    import os
+
+    default_filename = audio_stream.default_filename
+    os.rename(os.path.join(output_path, default_filename),
+              os.path.join(output_path, default_filename[:-4] + ".mp3"))
+
+    print("Audio extraction completed successfully!")
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
