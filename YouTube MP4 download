@@ -1,0 +1,11 @@
+from pytube import YouTube
+
+url = "https://youtu.be/CbsGPKm8FUE"
+out = r"D:\ALL Downloaded Files\YT Vids"
+try:
+    yt = YouTube(url)
+    video = yt.streams.get_highest_resolution()
+    video.download(out)
+    print("Download completed successfully!")
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
